@@ -38,7 +38,7 @@ sub_app = FastAPI(
     title="Retrieval Plugin API",
     description="A retrieval API for querying and filtering documents based on natural language queries and metadata",
     version="1.0.0",
-    servers=[{"url": "https://your-app-url.com"}],
+    servers=[{"url": "https://openai.ftds-sandbox.rockwellautomation.com"}],
     dependencies=[Depends(validate_token)],
 )
 app.mount("/sub", sub_app)
