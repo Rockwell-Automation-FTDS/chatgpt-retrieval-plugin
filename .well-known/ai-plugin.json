@@ -2,8 +2,8 @@
   "schema_version": "v1",
   "name_for_model": "retrieval",
   "name_for_human": "Retrieval Plugin",
-  "description_for_model": "Plugin for searching through the user's documents (such as files, emails, and more) to find answers to questions and retrieve relevant information. Use it whenever a user asks something that might be found in their personal information.",
-  "description_for_human": "Search through your documents.",
+  "description_for_model": "Plugin for generating code for FactoryTalk Design Studio (FTDS)",
+  "description_for_human": "Copilot for your FactoryTalk Design Studio",
   "auth": {
     "type": "user_http",
     "authorization_type": "bearer"
@@ -15,5 +15,5 @@
   },
   "logo_url": "https://openai.ftds-sandbox.rockwellautomation.com/.well-known/logo.png",
   "contact_email": "hello@contact.com", 
-  "legal_info_url": "http://example.com/legal-info"
+  "legal_info_url": "https://www.rockwellautomation.com/en-us/company/about-us/legal-notices.html"
 }
