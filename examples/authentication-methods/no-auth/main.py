@@ -28,7 +28,7 @@ sub_app = FastAPI(
     title="Retrieval Plugin API",
     description="A retrieval API for querying and filtering documents based on natural language queries and metadata",
     version="1.0.0",
-    servers=[{"url": "https://openai.ftds-sandbox.rockwellautomation.com"}],
+    servers=[{"url": "http://chatgpt-retrieval-plugin:8000"}],
 )
 app.mount("/sub", sub_app)
 
