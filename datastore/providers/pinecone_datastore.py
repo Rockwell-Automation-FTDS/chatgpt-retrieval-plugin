@@ -159,7 +159,7 @@ class PineconeDataStore(DataStore):
                 result = DocumentChunkWithScore(
                     id=result.id,
                     score=score,
-                    text=metadata["text"] if metadata and "text" in metadata else None,
+                    text=str(metadata["text"]) if metadata and "text" in metadata else "",
                     metadata=metadata_without_text,
                 )
                 query_results.append(result)
@@ -232,11 +232,11 @@ class PineconeDataStore(DataStore):
         for field, value in filter.dict().items():
             if value is not None:
                 if field == "start_date":
-                    pinecone_filter["date"] = pinecone_filter.get("date", {})
-                    pinecone_filter["date"]["$gte"] = to_unix_timestamp(value)
+                    pinecone_filter["created_at"] = pinecone_filter.get("created_at", {})
+                    pinecone_filter["created_at"]["$gte"] = to_unix_timestamp(value)
                 elif field == "end_date":
-                    pinecone_filter["date"] = pinecone_filter.get("date", {})
-                    pinecone_filter["date"]["$lte"] = to_unix_timestamp(value)
+                    pinecone_filter["created_at"] = pinecone_filter.get("created_at", {})
+                    pinecone_filter["created_at"]["$lte"] = to_unix_timestamp(value)
                 else:
                     pinecone_filter[field] = value
 

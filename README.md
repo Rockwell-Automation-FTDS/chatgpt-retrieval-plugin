@@ -1,7 +1,5 @@
 # ChatGPT Retrieval Plugin
 
-> **Join the [ChatGPT plugins waitlist here](https://openai.com/waitlist/plugins)!**
-
 Find an example video of a Retrieval Plugin that has access to the UN Annual Reports from 2018 to 2022 [here](https://cdn.openai.com/chat-plugins/retrieval-gh-repo-readme/Retrieval-Final.mp4).
 
 ## Introduction
@@ -46,6 +44,7 @@ This README provides detailed information on how to set up, develop, and deploy 
     - [Llama Index](#llamaindex)
     - [Chroma](#chroma)
     - [Azure Cognitive Search](#azure-cognitive-search)
+    - [Azure CosmosDB Mongo vCore](#azure-cosmosdb-mongo-vcore)
     - [Supabase](#supabase)
     - [Postgres](#postgres)
     - [AnalyticDB](#analyticdb)
@@ -156,6 +155,12 @@ Follow these steps to quickly set up and run the ChatGPT Retrieval Plugin:
    export AZURESEARCH_SERVICE=<your_search_service_name>
    export AZURESEARCH_INDEX=<your_search_index_name>
    export AZURESEARCH_API_KEY=<your_api_key> (optional, uses key-free managed identity if not set)
+   
+   # Azure CosmosDB Mongo vCore
+   export AZCOSMOS_API = <your azure cosmos db api, for now it only supports mongo>
+   export AZCOSMOS_CONNSTR = <your azure cosmos db mongo vcore connection string>
+   export AZCOSMOS_DATABASE_NAME = <your mongo database name>
+   export AZCOSMOS_CONTAINER_NAME = <your mongo container name>
 
    # Supabase
    export SUPABASE_URL=<supabase_project_url>
@@ -166,7 +171,7 @@ Follow these steps to quickly set up and run the ChatGPT Retrieval Plugin:
    export PG_PORT=<postgres_port>
    export PG_USER=<postgres_user>
    export PG_PASSWORD=<postgres_password>
-   export PG_DATABASE=<postgres_database>
+   export PG_DB=<postgres_database>
 
    # Elasticsearch
    export ELASTICSEARCH_URL=<elasticsearch_host_and_port> (either specify host or cloud_id)
@@ -352,6 +357,9 @@ For detailed setup instructions, refer to [`/docs/providers/llama/setup.md`](/do
 #### Azure Cognitive Search
 
 [Azure Cognitive Search](https://azure.microsoft.com/products/search/) is a complete retrieval cloud service that supports vector search, text search, and hybrid (vectors + text combined to yield the best of the two approaches). It also offers an [optional L2 re-ranking step](https://learn.microsoft.com/azure/search/semantic-search-overview) to further improve results quality. For detailed setup instructions, refer to [`/docs/providers/azuresearch/setup.md`](/docs/providers/azuresearch/setup.md)
+
+#### Azure CosmosDB Mongo vCore
+[Azure CosmosDB Mongo vCore](https://learn.microsoft.com/en-us/azure/cosmos-db/mongodb/vcore/) supports vector search on embeddings, and it could be used to seamlessly integrate your AI-based applications with your data stored in the Azure CosmosDB. For detailed instructions, refer to [`/docs/providers/azurecosmosdb/setup.md`](/docs/providers/azurecosmosdb/setup.md)
 
 #### Supabase
 
